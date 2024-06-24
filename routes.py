@@ -231,7 +231,7 @@ def process_data():
             minutes, seconds = divmod(execution_time, 60)
             formatted_time = f"{int(minutes):02}:{int(seconds):02}"
             execution_time_block = {"executionTime":f"{formatted_time}"}
-            messageJson = '{"message": "Data processed!"}'
+            messageJson = '{"message": "Data Processed!"}'
             response_with_time = json.loads(messageJson)
             response_with_time.update(execution_time_block)
             return Response(json.dumps(response_with_time), mimetype='application/json')
