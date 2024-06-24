@@ -28,7 +28,7 @@ from flask_cors import CORS
 
 load_dotenv(dotenv_path="HUGGINGFACEHUB_API_TOKEN.env") # This is for render hosting service
 # Set the API key for OpenAI
-openai.api_key = os.getenv('OPENAI_API_KEY')
+OpenAI.api_key = os.getenv('OPENAI_API_KEY')
 api_key = os.getenv('GOOGLE_API_KEY')
 genai.configure(api_key=api_key)
 client = OpenAI()
