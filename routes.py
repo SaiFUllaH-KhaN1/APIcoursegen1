@@ -1,25 +1,13 @@
 from flask import Flask, render_template, request, Response, jsonify, session, send_from_directory, flash, redirect, url_for
-from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_community.vectorstores import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_community.llms import OpenAI
 from langchain_community.chat_models import ChatOpenAI
 import os
-import openai
 from openai import OpenAI
-from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-    SystemMessagePromptTemplate,
-)
-from langchain.schema import HumanMessage, SystemMessage
 from dotenv import load_dotenv
-import requests
 import json
 import langchaindemoBlock_22_april as LCD
-from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-from langchain.schema import AIMessage, HumanMessage, SystemMessage
-from langchain.chains import ConversationChain
 from flask_caching import Cache
 import uuid
 import shutil 
