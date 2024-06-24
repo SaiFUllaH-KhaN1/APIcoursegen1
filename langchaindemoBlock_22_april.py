@@ -1,36 +1,21 @@
-from langchain_core.runnables import RunnableLambda, RunnablePassthrough
-from operator import itemgetter
-from langchain_community.llms import HuggingFaceHub
-from langchain.chains import ConversationChain
 from langchain_community.chat_models import ChatOpenAI
 # from langchain_openai import ChatOpenAI
-from langchain.chains.conversation.memory import ConversationBufferMemory, ConversationBufferWindowMemory
 from langchain.chains import LLMChain
 from langchain.prompts import BaseChatPromptTemplate, PromptTemplate
-from langchain.agents import initialize_agent, Tool, load_tools, AgentType
-from dotenv import load_dotenv
-from openai import OpenAI
 import base64
 from langchain.prompts import PromptTemplate
 from langchain.schema.messages import HumanMessage, SystemMessage
-from langchain.prompts import PromptTemplate, ChatPromptTemplate, HumanMessagePromptTemplate
+# from PyPDF2 import PdfReader
 from pypdf import PdfReader
-from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.vectorstores import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter, RecursiveCharacterTextSplitter
-from reportlab.pdfgen import canvas 
 import os
 import shutil
 import json
 from langchain.schema.document import Document
-from flask import Flask, render_template, request, session, flash, get_flashed_messages
-from io import BytesIO
-from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-from langchain.chains import ConversationChain
-from langchain_experimental.text_splitter import SemanticChunker
 from langchain_community.document_loaders.csv_loader import CSVLoader
-from langchain.document_loaders import UnstructuredExcelLoader, UnstructuredWordDocumentLoader, UnstructuredPowerPointLoader, TextLoader
+from langchain_community.document_loaders import UnstructuredExcelLoader, UnstructuredWordDocumentLoader, UnstructuredPowerPointLoader, TextLoader
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.pydantic_v1 import BaseModel, Field
